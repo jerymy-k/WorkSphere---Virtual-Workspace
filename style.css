@@ -1,1 +1,46 @@
 @import "tailwindcss" ;
+* {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.imgContainer{
+    display: grid;
+    grid-template-columns: 37.2% 18% 22.5% 22.5%;
+    grid-template-rows: 34% 32% 34% ;
+}
+
+.room1{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.room2{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.room3{
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+}
+
+.room4{
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+
+.room5{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.room6{
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+}
+#formContainerAjout::-webkit-scrollbar{
+    display: none;
+}
