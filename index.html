@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Tailwind</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="output.css ">
+    <link rel="stylesheet" href="output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,211 +15,214 @@
     <script defer src="script.js"></script>
 </head>
 
-<body class="relative flex h-screen w-screen bg-black">
-    <div id="details"
-        class="absolute left-1/2 -translate-x-1/2 place-self-center hidden text-white  w-[40%]  rounded-2xl bg-[#1a202c] h-[80%] z-50 detailspage">
+<body class="relative flex w-screen h-screen bg-black ">
+    <div id="details" class="absolute left-1/2 -translate-x-1/2 
+    text-white w-[40%] rounded-2xl bg-[#1a202c]  z-50 detailspage place-self-center h-[80vh] hidden">
 
 
 
     </div>
     <div style="scrollbar-width: none;" id="ListAddWorkSpace"
-        class="absolute left-1/2 -translate-x-1/2 place-self-center  text-white  w-[23%] hidden p-3 overflow-scroll rounded-2xl bg-[#1a202c] h-[80%]  flex-col">
+        class="absolute left-1/2 -translate-x-1/2 place-self-center  text-white sm:w-[50%]  lg:w-[30%] hidden p-3 overflow-scroll rounded-2xl bg-[#1a202c] min-h-[40%]  flex-col z-50">
 
     </div>
-    <aside class="SideBar w-[20%] flex flex-col">
+    <aside class="SideBar w-[20%] flex flex-col h-100%">
         <div
-            class=" h-[20%] flex flex-col items-center justify-around border-2 rounded-[20px] border-black m-[5px] bg-white">
-            <button class="ajoutBtn w-[150px] h-[40px] bg-green-500 text-white rounded-[20px]">
+            class=" h-[20%] flex lg:flex-col flex-row-reverse items-center justify-around border-2 rounded-[20px] border-black m-[5px] bg-white">
+            <button class="ajoutBtn px-[5%] py-[4%] flex items-center  lg: bg-green-500 text-white rounded-[20px]">
                 Ajouter
             </button>
             <span class="text-[20px]">Liste Employers</span>
         </div>
-        <div class="employesContainer flex-1 m-[5px] rounded-[20px] p-[5px] bg-gray-200 flex flex-col gap-1">
+        <div style="scrollbar-width: none;" class="employesContainer flex-1 m-[5px] rounded-[20px] p-[5px] bg-gray-200 flex flex-col gap-1 overflow-scroll h-full">
 
         </div>
 
     </aside>
-    <main class="m-[5px] rounded-[20px] bg-white bg-[url(/img/plan.jpg)] bg-no-repeat flex flex-1 bg-center bg-cover">
-        <div class="imgContainer h-full w-full">
+    <main class=" m-[5px] rounded-[20px]">
+        <div class="imgContainer relative z-0">
+            <img src="img/plan.jpg" alt="" class="plan absolute  ">
             <div
-                class="room1 justify-center items-center gap-1 border-2 border-black grid p-[5%] grid-cols-2 grid-rows-3">
+                class="room1  no-bg  justify-center items-center gap-1 border-2 border-black grid p-[5%] grid-cols-2 grid-rows-3">
                 <button
                     class=" bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8 addtoroom absolute"
                     data-room="conference">+</button>
             </div>
-            <div class="room2 justify-center bg-red-600/30 border-2 border-black grid grid-cols-2 grid-rows-3">
+            <div
+                class="room2 justify-center bg-red-600/30 border-2 border-black grid grid-cols-2 grid-rows-3 lg:gap-4 gap-2 lg:p-6">
                 <button
                     class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8 addtoroom absolute"
                     data-room="serveurs">+</button>
             </div>
-            <div class="room3  justify-center bg-red-600/30 border-2 border-black grid grid-cols-2 grid-rows-3">
+            <div
+                class="room3   justify-center bg-red-600/30 border-2 border-black grid grid-cols-2 grid-rows-3 lg:gap-4 gap-2 lg:p-6">
                 <button
                     class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8 addtoroom absolute"
                     data-room="securite">+</button>
             </div>
             <div
-                class="room4 justify-center bg-red-600/30 border-2 border-black grid grid-cols-2 grid-rows-3 p-[18%] gap-3">
+                class="room4 justify-center bg-red-600/30 border-2 border-black grid grid-cols-2 grid-rows-3  p-[18%] gap-4 ">
                 <button
                     class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8 addtoroom absolute"
                     data-room="reception">+</button>
             </div>
-            <div class="room5  justify-center border-2 border-black grid grid-cols-2 grid-rows-3">
+            <div class="room5   justify-center border-2 border-black grid grid-cols-2 grid-rows-3 lg:gap-4 gap-2 lg:p-6 ">
+                
                 <button
                     class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8 addtoroom absolute"
                     data-room="personnel">+</button>
             </div>
-            <div class="room6  justify-center bg-red-600/30 border-2 border-black grid grid-cols-2 grid-rows-3">
+            <div
+                class="room6  justify-center bg-red-600/30 border-2 border-black grid grid-cols-2 grid-rows-3 lg:gap-4 gap-2 lg:p-6">
                 <button
                     class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8 addtoroom absolute"
                     data-room="archives">+</button>
             </div>
+
         </div>
     </main>
-    <div id="formContainerAjout" class="bg-[#1a202c] border-[#4a5568] absolute left-1/2 -translate-x-1/2  hidden
+    <section id="formContainerAjout" class="absolute   h-screen w-screen hidden  flex justify-center"
+        style="background-color: #14141657;">
+        <div class=" bg-[#1a202c] border-[#4a5568] 
         rounded-[20px] h-[90%]  overflow-scroll  place-self-center 
-        text-black p-6 w-[60%]">
-        <h1 class="text-white" style="font-size: 30px; text-align: center; height: 30px;">Ajouter Un Employer</h1>
+        text-black p-6 md:w-[60%]" style="scrollbar-width: none;">
+            <h1 class="text-white" style="font-size: 30px; text-align: center; height: 30px;">Ajouter Un Employer</h1>
 
-        <form id="cvForm" class="space-y-6 w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-                <div id="imagePreview"
-                    class="mt-3 w-32 col-start-1 col-end-3 place-self-center h-32 bg-gray-100 border rounded-full flex items-center justify-center overflow-hidden"
-                    style="background-color: #2d3748; border-color: #4a5568; color: #a0aec0;">
-                    <span class="text-gray-400 text-sm">No image</span>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Nom</label>
-                    <input name="nom" type="text" placeholder="El Kreymy Mohamed"
-                        class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
-                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Rôle</label>
-                    <select name="role"
-                        class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
-                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
-                        <option value="Manager">Manager</option>
-                        <option value="Réceptionnistes">Réceptionnistes</option>
-                        <option value="Techniciens IT">Techniciens IT</option>
-                        <option value="Agents de sécurité">Agents de sécurité</option>
-                        <option value="Nettoyage">Nettoyage</option>
-                        <option value="AutresRoles">Autres Roles</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Téléphone</label>
-                    <input name="telephone" type="tel" placeholder="+212 6 12 34 56 78"
-                        class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
-                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
-                </div>
-                <div>
-                    <!-- add rejex to email  -->
-                    <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Email</label>
-                    <input name="email" type="email" placeholder="exemple@domaine.com"
-                        class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
-                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
-                </div>
-
-                <div class="md:col-span-2">
-                    <!-- there i need to add a function for the picture -->
-                    <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Photo (URL)</label>
-                    <input type="url" id="photoUrl" class="w-full border rounded p-2"
-                        placeholder="https://example.com/photo.jpg" name="url"
-                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
-                </div>
-            </div>
-
-            <section>
-                <div class="flex flex-col gap-2 items-center justify-between mb-3">
-                    <h2 class="text-lg font-medium" style="color: #63b3ed; font-size: 20px;">Expériences
-                        professionnelles</h2>
-                    <button id="addExperienceBtn" type="button"
-                        class="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white rounded-md shadow-sm place-self-end hover:bg-indigo-700"
-                        style="background-color: #3182ce; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-                        +
-                        <span class="text-sm">Ajouter</span>
-                    </button>
-                </div>
-
-                <div id="experiencesList" class="space-y-4">
-                    <!-- there we put the template with js -->
-                </div>
-
-                <template id="experienceTemplate">
-                    <div class="experiencedata border rounded-lg p-4 bg-gray-50"
-                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
-                        <div class="flex gap-2 flex-col items-center">
-                            <h3 class="" style="color: #63b3ed; font-size: 20px;">Nouvelle expérience</h3>
-                            <button type="button"
-                                class="removeExpBtn flex  items-end px-2 place-self-end py-1 text-sm text-red-600 hover:underline"
-                                style="color: #fc8181;">Supprimer</button>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
-                            <div>
-                                <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Poste</label>
-                                <input name="poste" type="text" class="w-full rounded-md border-gray-200 shadow-sm p-2"
-                                    placeholder="Ex: Développeur web"
-                                    style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Entreprise</label>
-                                <input name="entreprise" type="text"
-                                    class="w-full rounded-md border-gray-200 shadow-sm p-2" placeholder="Ex: Kreymy SA"
-                                    style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Date début</label>
-                                <input id="debut" name="debut" type="date"
-                                    class="w-full rounded-md border-gray-200 shadow-sm p-2"
-                                    style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Date fin</label>
-                                <input id="fin" name="fin" type="date"
-                                    class="w-full rounded-md border-gray-200 shadow-sm p-2"
-                                    style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="block text-sm font-medium mb-1"
-                                    style="color: #e2e8f0;">Description</label>
-                                <textarea name="description" rows="3"
-                                    class="w-full rounded-md border-gray-200 shadow-sm p-2 resize-none"
-                                    placeholder="Responsabilités et réalisations..."
-                                    style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;"></textarea>
-                            </div>
-                        </div>
+            <form id="cvForm" class="space-y-6 w-full">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                    <div id="imagePreview"
+                        class="mt-3 w-32 col-start-1 col-end-3 place-self-center h-32 bg-gray-100 border rounded-full flex items-center justify-center overflow-hidden"
+                        style="background-color: #2d3748; border-color: #4a5568; color: #a0aec0;">
+                        <span class="text-gray-400 text-sm">No image</span>
                     </div>
-                </template>
-            </section>
-            <div class="flex items-center justify-around">
-                <button id="annulBtnForm" type="button"
-                    class="text-white  rounded-md px-6 py-2 bg-[#2d3748] hover:bg-[#2c3444]">Annuler</button>
-                <button type="submit"
-                    class="px-4 py-2 bg-green-600 text-white rounded-md shadow-sm hover:bg-green-700">Enregistrer</button>
-            </div>
-        </form>
+                    <div>
+                        <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Nom</label>
+                        <input name="nom" type="text" placeholder="El Kreymy Mohamed"
+                            class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
+                            style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Rôle</label>
+                        <select name="role"
+                            class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
+                            style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
+                            <option value="Manager">Manager</option>
+                            <option value="Réceptionnistes">Réceptionnistes</option>
+                            <option value="Techniciens IT">Techniciens IT</option>
+                            <option value="Agents de sécurité">Agents de sécurité</option>
+                            <option value="Nettoyage">Nettoyage</option>
+                            <option value="AutresRoles">Autres Roles</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Téléphone</label>
+                        <input name="telephone" type="tel" placeholder="+212 6 12 34 56 78"
+                            class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
+                            style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
+                    </div>
+                    <div>
+                        <!-- add rejex to email  -->
+                        <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Email</label>
+                        <input name="email" type="email" placeholder="exemple@domaine.com"
+                            class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
+                            style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <!-- there i need to add a function for the picture -->
+                        <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Photo (URL)</label>
+                        <input type="url" id="photoUrl" class="w-full border rounded p-2"
+                            placeholder="https://example.com/photo.jpg" name="url"
+                            style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
+                    </div>
+                </div>
+
+                <section>
+                    <div class="flex flex-col gap-2 items-center justify-between mb-3">
+                        <h2 class="text-lg font-medium" style="color: #63b3ed; font-size: 20px;">Expériences
+                            professionnelles</h2>
+                        <button id="addExperienceBtn" type="button"
+                            class="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-600 text-white rounded-md shadow-sm place-self-end hover:bg-indigo-700"
+                            style="background-color: #3182ce; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+                            +
+                            <span class="text-sm">Ajouter</span>
+                        </button>
+                    </div>
+
+                    <div id="experiencesList" class="space-y-4">
+                        <!-- there we put the template with js -->
+                    </div>
+
+                    <template id="experienceTemplate">
+                        <div class="experiencedata border rounded-lg p-4 bg-gray-50"
+                            style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
+                            <div class="flex gap-2 flex-col items-center">
+                                <h3 class="" style="color: #63b3ed; font-size: 20px;">Nouvelle expérience</h3>
+                                <button type="button"
+                                    class="removeExpBtn flex  items-end px-2 place-self-end py-1 text-sm text-red-600 hover:underline"
+                                    style="color: #fc8181;">Supprimer</button>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                                <div>
+                                    <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Poste</label>
+                                    <input name="poste" type="text"
+                                        class="w-full rounded-md border-gray-200 shadow-sm p-2"
+                                        placeholder="Ex: Développeur web"
+                                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium mb-1"
+                                        style="color: #e2e8f0;">Entreprise</label>
+                                    <input name="entreprise" type="text"
+                                        class="w-full rounded-md border-gray-200 shadow-sm p-2"
+                                        placeholder="Ex: Kreymy SA"
+                                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Date
+                                        début</label>
+                                    <input id="debut" name="debut" type="date"
+                                        class="w-full rounded-md border-gray-200 shadow-sm p-2"
+                                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Date
+                                        fin</label>
+                                    <input id="fin" name="fin" type="date"
+                                        class="w-full rounded-md border-gray-200 shadow-sm p-2"
+                                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium mb-1"
+                                        style="color: #e2e8f0;">Description</label>
+                                    <textarea name="description" rows="3"
+                                        class="w-full rounded-md border-gray-200 shadow-sm p-2 resize-none"
+                                        placeholder="Responsabilités et réalisations..."
+                                        style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </section>
+                <div class="flex items-center justify-around">
+                    <button id="annulBtnForm" type="button"
+                        class="text-white  rounded-md px-6 py-2 bg-[#2d3748] hover:bg-[#2c3444]">Annuler</button>
+                    <button type="submit"
+                        class="px-4 py-2 bg-green-600 text-white rounded-md shadow-sm hover:bg-green-700">Enregistrer</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+    <div
+        class="absolute listToAdd left-1/2 -translate-x-1/2 w-[300px] h-[70%] self-center  m-[5px] rounded-[20px] p-[5px] bg-gray-200 hidden">
 
     </div>
-    <div class="absolute listToAdd left-1/2 -translate-x-1/2 w-[300px] h-[70%] self-center  m-[5px] rounded-[20px] p-[5px] bg-gray-200 hidden" >
-        <!-- <div
-            class="employe bg-white flex rounded-2xl p-[5px] border-black  border-2 cursor-pointer h-14 justify-between ">
-            <div class="flex gap-2">
-                <div
-                    class="imageContainerProfil overflow-hidden flex justify-center items-center rounded-xl h-full w-9">
-                    <img class="w-full h-full" src="img/plan.jpg" alt="employe">
-                </div>
-                <div class="infoEmploye">
-                    <h5 class="font-extrabold text-zinc-500">name</h5>
-                    <p class="roleEmploye font-bold text-zinc-500">role</p>
-                </div>
-            </div>
-            <span class="BtnAddtoZone flex items-center text-[20px] pr-[5px] ">+</span> -->
-        </div>
     </div>
 </body>
 
