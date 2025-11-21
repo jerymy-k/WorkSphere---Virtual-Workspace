@@ -16,6 +16,10 @@
 </head>
 
 <body class="relative flex w-screen h-screen bg-black ">
+    <div id="toast-container" class="fixed top-5 right-5 flex flex-col gap-3 z-50"></div>
+    <script>
+        
+    </script>
     <div id="details" class="absolute left-1/2 -translate-x-1/2 
     text-white w-[40%] rounded-2xl bg-[#1a202c]  z-50 detailspage place-self-center h-[80vh] hidden">
 
@@ -34,7 +38,8 @@
             </button>
             <span class="text-[20px]">Liste Employers</span>
         </div>
-        <div style="scrollbar-width: none;" class="employesContainer flex-1 m-[5px] rounded-[20px] p-[5px] bg-gray-200 flex flex-col gap-1 overflow-scroll h-full">
+        <div style="scrollbar-width: none;"
+            class="employesContainer flex-1 m-[5px] rounded-[20px] p-[5px] bg-gray-200 flex flex-col gap-1 overflow-scroll h-full">
 
         </div>
 
@@ -66,8 +71,9 @@
                     class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8 addtoroom absolute"
                     data-room="reception">+</button>
             </div>
-            <div class="room5   justify-center border-2 border-black grid grid-cols-2 grid-rows-3 lg:gap-4 gap-2 lg:p-6 ">
-                
+            <div
+                class="room5   justify-center border-2 border-black grid grid-cols-2 grid-rows-3 lg:gap-4 gap-2 lg:p-6 ">
+
                 <button
                     class="bg-emerald-500 rounded-md text-zinc-800 place-self-center font-extrabold h-8 w-8 addtoroom absolute"
                     data-room="personnel">+</button>
@@ -81,7 +87,7 @@
 
         </div>
     </main>
-    <section id="formContainerAjout" class="absolute   h-screen w-screen hidden  flex justify-center"
+    <section id="formContainerAjout" class="absolute  formContainer h-screen w-screen hidden  flex justify-center"
         style="background-color: #14141657;">
         <div class=" bg-[#1a202c] border-[#4a5568] 
         rounded-[20px] h-[90%]  overflow-scroll  place-self-center 

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* npx @tailwindcss/cli -i ./style.css -o ./output.css --watch */
 
 * {
     font-size: 15px;

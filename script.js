@@ -21,9 +21,11 @@ function hideAfficheForm() {
     formContainerAjout.classList.toggle("hidden");
     imagePreview.innerHTML = `<span class="text-gray-400 text-sm">No image</span>`;
 }
-// formContainerAjout.addEventListener('click' , () =>{
-
-// })
+formContainerAjout.addEventListener('click', (e) => {
+    if (e.target.classList.contains('formContainer')) {
+        hideAfficheForm();
+    }
+})
 ajoutBtn.addEventListener("click", () => {
     hideAfficheForm();
 });
@@ -107,11 +109,12 @@ form.addEventListener("submit", function (e) {
         experience: experience,
     };
     employes.push(employe);
+    employelist.push(employe);
     hideAfficheForm();
     form.reset();
     affichersidebar();
-    afficherdetails()
-    employelist = [...employes];
+    afficherdetails();
+    showToast("L’employé a été ajouté avec succès", "success")
 });
 function affichersidebar() {
     employesContainer.innerHTML = "";
@@ -189,7 +192,7 @@ const ListAddWorkSpace = document.querySelector('#ListAddWorkSpace');
 addtoroom.forEach(addbtn => {
     const roomcontainer = addbtn.parentNode;
     addbtn.addEventListener('click', () => {
-        let lengthemp = employelist.length
+        let lengthemp = employelist.length;
         if (lengthemp > 0) {
             room = addbtn.dataset.room
             if (room == "conference" || "personnel") {
@@ -217,17 +220,24 @@ addtoroom.forEach(addbtn => {
                 afficher(list, roomcontainer, room);
             }
         }
+        else {
+            showToast("Il n’y a aucun employé", "error")
+        }
     })
 })
 function afficher(arrayroom, roomcontainer, room) {
     ListAddWorkSpace.innerHTML = "";
     ListAddWorkSpace.innerHTML = `<p class="listclose flex justify-end p-3">X</p>`;
-    arrayroom.forEach(emp => {
-        const div = document.createElement("div");
-        div.className =
-            "employe bg-white  p-[5px] border-black  border-2 cursor-pointer gap-2 flex justify-between items-center rounded-lg";
-        div.setAttribute("data-id", `${emp.id}`);
-        div.innerHTML = `
+    if (arrayroom.length == 0) {
+        showToast("aucan employer <unsigned> peus acceder a cette chember", "warning")
+        ListAddWorkSpace.classList.add('hidden')
+    } else {
+        arrayroom.forEach(emp => {
+            const div = document.createElement("div");
+            div.className =
+                "employe bg-white  p-[5px] border-black  border-2 cursor-pointer gap-2 flex justify-between items-center rounded-lg";
+            div.setAttribute("data-id", `${emp.id}`);
+            div.innerHTML = `
                 <div class=" overflow-hidden flex justify-center items-center rounded-xl h-full w-9">
                         <img class="h-full w-full" src="${emp.url}" alt="employe" />
                     </div>
@@ -237,42 +247,64 @@ function afficher(arrayroom, roomcontainer, room) {
                     </div>
                     <span data-id="${emp.id}" class="deletefromroom">X</span>
             `;
-        ListAddWorkSpace.appendChild(div)
-        ListAddWorkSpace.classList.remove('hidden')
-        ListAddWorkSpace.classList.add('flex')
-        div.addEventListener('click', (e) => {
-            const length = roomcontainer.children.length;
-            if (length < 7) {
-                roomcontainer.classList.remove('bg-red-600/30');
-                roomcontainer.appendChild(div);
-                const emplocation = employes.find(f => f.id == emp.id);
-                employelist = employelist.filter(f => f.id != emp.id);
-                emplocation.location = room;
-                affichersidebar();
+            ListAddWorkSpace.appendChild(div);
+            ListAddWorkSpace.classList.remove('hidden')
+            ListAddWorkSpace.classList.add('flex')
+            div.addEventListener('click', (e) => {
+                const length = roomcontainer.children.length;
+                if (length < 7) {
+                    roomcontainer.classList.remove('bg-red-600/30');
+                    roomcontainer.appendChild(div);
+                    const emplocation = employes.find(f => f.id == emp.id);
+                    employelist = employelist.filter(f => f.id != emp.id);
+                    emplocation.location = room;
+                    affichersidebar();
+                    showToast("vous avez ajouter l'employe avec succes", "info")
 
 
-            }
-            if (e.target.classList.contains('deletefromroom')) {
-                const employedlt = e.target.closest('.employe');
-                const remvemp = employes.find(f => f.id == emp.id);
-                remvemp.location = "unsinged";
-                employedlt.remove();
-                affichersidebar();
-                afficherdetails();
-                if (roomcontainer.children.length == 1) {
-                    if (!roomcontainer.classList.contains('no-bg')) {
-                        roomcontainer.classList.add('bg-red-600/30');
-                    }
                 }
-                employelist.push(remvemp);
+                if (e.target.classList.contains('deletefromroom')) {
+                    const employedlt = e.target.closest('.employe');
+                    const remvemp = employes.find(f => f.id == emp.id);
+                    remvemp.location = "unsinged";
+                    employedlt.remove();
+                    showToast("vous avez retirer l'employe avec succes", "info")
+                    affichersidebar();
+                    afficherdetails();
+                    if (roomcontainer.children.length == 1) {
+                        if (!roomcontainer.classList.contains('no-bg')) {
+                            roomcontainer.classList.add('bg-red-600/30');
+                        }
+                    }
+                    employelist.push(remvemp);
 
-            }
+                }
+            })
         })
-    })
+    }
     const listclose = document.querySelector('.listclose');
     listclose.addEventListener('click', () => {
         afficherdetails();
         ListAddWorkSpace.classList.add('hidden')
         ListAddWorkSpace.classList.remove('flex')
     })
+}
+function showToast(message, type = "info") {
+    const container = document.getElementById("toast-container")
+
+    const colors = {
+        info: "bg-indigo-600",
+        success: "bg-emerald-600",
+        warning: "bg-amber-600",
+        error: "bg-red-600"
+    };
+    const toast = document.createElement("div")
+    toast.className = `toast text-white px-4 py-3 rounded-lg shadow-2xl ${colors[type]} border border-white/20`
+    toast.textContent = message
+
+    container.appendChild(toast)
+
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
 }
