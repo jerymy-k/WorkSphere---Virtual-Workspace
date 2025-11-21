@@ -1,5 +1,6 @@
 const ajoutBtn = document.querySelector(".ajoutBtn");
 const formContainerAjout = document.querySelector("#formContainerAjout");
+const form = document.querySelector("#cvForm");
 const annulBtnForm = document.querySelector("#annulBtnForm");
 const addExperienceBtn = document.querySelector("#addExperienceBtn");
 const experienceTemplate = document.querySelector("#experienceTemplate");
@@ -7,31 +8,38 @@ let experiencesList = document.querySelector("#experiencesList");
 const employesContainer = document.querySelector(".employesContainer");
 const imagePreview = document.querySelector('#imagePreview');
 const urle = document.querySelector('input[name="url"]');
-
 let employes = [];
 let employelist = [];
 let id = 0;
 const details = document.getElementById("details");
+const addtoroom = document.querySelectorAll('.addtoroom');
+const ListAddWorkSpace = document.querySelector('#ListAddWorkSpace');
+// ------afficher the pecture in url -------------
 urle.addEventListener("input", () => {
     imagePreview.innerHTML = `
         <img src="${urle.value}">
     `
 })
+// ---------for hide and affiche form -----------
 function hideAfficheForm() {
     formContainerAjout.classList.toggle("hidden");
     imagePreview.innerHTML = `<span class="text-gray-400 text-sm">No image</span>`;
 }
+// -------for exit the form with click out of the form ------------
 formContainerAjout.addEventListener('click', (e) => {
     if (e.target.classList.contains('formContainer')) {
         hideAfficheForm();
     }
 })
+// --------------afficher form clicked btn ajoute -----------
 ajoutBtn.addEventListener("click", () => {
     hideAfficheForm();
 });
+// ------------------hide form clicked btn annuler ------------
 annulBtnForm.addEventListener("click", () => {
     hideAfficheForm();
 });
+// ------------for add experienceTemplate to the form -----------
 function addExperience(data = {}) {
     let clone = experienceTemplate.content.cloneNode(true);
     let container = clone.querySelector("div");
@@ -41,10 +49,11 @@ function addExperience(data = {}) {
     experiencesList.append(container);
 }
 addExperience();
+// ------------- for ajt new container of experience ------------
 addExperienceBtn.addEventListener("click", () => {
     addExperience();
 });
-const form = document.querySelector("#cvForm");
+// ---------------- form validation and traitment of data -----------------
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     let nom = form.nom.value.trim();
@@ -116,6 +125,7 @@ form.addEventListener("submit", function (e) {
     afficherdetails();
     showToast("L’employé a été ajouté avec succès", "success")
 });
+// --------------afficher worker in side bar -----------
 function affichersidebar() {
     employesContainer.innerHTML = "";
     employes.forEach(emp => {
@@ -138,10 +148,9 @@ function affichersidebar() {
         employesContainer.appendChild(div);
     })
 }
+// ----------------affiche detail for any worker ---------------
 function afficherdetails() {
-
     const allemp = document.querySelectorAll('.employe');
-
     allemp.forEach(emp => {
         const eml = employes.find(f => f.id == emp.dataset.id);
         emp.addEventListener('click', (e) => {
@@ -186,9 +195,7 @@ function afficherdetails() {
         })
     })
 }
-
-const addtoroom = document.querySelectorAll('.addtoroom');
-const ListAddWorkSpace = document.querySelector('#ListAddWorkSpace');
+// -----------for add worker to room -----------
 addtoroom.forEach(addbtn => {
     const roomcontainer = addbtn.parentNode;
     addbtn.addEventListener('click', () => {
@@ -289,9 +296,9 @@ function afficher(arrayroom, roomcontainer, room) {
         ListAddWorkSpace.classList.remove('flex')
     })
 }
+// -----------------this for toast Notification -------------
 function showToast(message, type = "info") {
     const container = document.getElementById("toast-container")
-
     const colors = {
         info: "bg-indigo-600",
         success: "bg-emerald-600",
