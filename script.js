@@ -70,10 +70,10 @@ form.addEventListener("submit", function (e) {
         alert("Le nom est invalide (3 à 30 lettres uniquement).");
         return;
     }
-    // if (!telRegex.test(telephone)) {
-    //     alert("Téléphone invalide. Exemple: +212612345678 ou 0612345678");
-    //     return;
-    // }
+    if (!telRegex.test(telephone)) {
+        alert("Téléphone invalide. Exemple: +212612345678 ou 0612345678");
+        return;
+    }
     if (!emailRegex.test(email)) {
         alert("Email invalide. Exemple: exemple@domaine.com");
         return;
@@ -85,10 +85,10 @@ form.addEventListener("submit", function (e) {
         const startDate = new Date(debut);
         const endDate = new Date(fin);
 
-        // if (startDate > endDate) {
-        //     alert("La date début ne peut pas être après la date fin !");
-        //     throw "date error";
-        // }
+        if (startDate > endDate) {
+            alert("La date début ne peut pas être après la date fin !");
+            throw "date error";
+        }
     });
     let experience = [];
     experiences.forEach((exp) => {
@@ -97,7 +97,6 @@ form.addEventListener("submit", function (e) {
         let debut = exp.querySelector("#debut").value;
         let fin = exp.querySelector("#fin").value;
         let description = exp.querySelector("textarea").value.trim();
-
         experience.push({
             poste: poste,
             entreprise: entreprise,
@@ -168,8 +167,6 @@ function afficherdetails() {
             <p class = "text-[20px] " style="color:green">${eml.location}</p>
             </div>
             `;
-
-
             details.innerHTML = "";
             details.appendChild(divdet);
             const CloseDetails = document.querySelector('.CloseDetails');
@@ -191,7 +188,6 @@ function afficherdetails() {
                     `;
                 employeDetails.append(divExp);
             });
-
         })
     })
 }
@@ -214,7 +210,6 @@ addtoroom.forEach(addbtn => {
                 const role = ["Manager", "Techniciens IT", "Nettoyage"]
                 const list = employelist.filter(emp => role.includes(emp.role));
                 afficher(list, roomcontainer, room);
-
             }
             if (room == "securite") {
                 const role = ["Manager", "Agents de sécurité", "Nettoyage"]
@@ -267,8 +262,6 @@ function afficher(arrayroom, roomcontainer, room) {
                     emplocation.location = room;
                     affichersidebar();
                     showToast("vous avez ajouter l'employe avec succes", "info")
-
-
                 }
                 if (e.target.classList.contains('deletefromroom')) {
                     const employedlt = e.target.closest('.employe');
@@ -284,7 +277,6 @@ function afficher(arrayroom, roomcontainer, room) {
                         }
                     }
                     employelist.push(remvemp);
-
                 }
             })
         })
@@ -308,9 +300,7 @@ function showToast(message, type = "info") {
     const toast = document.createElement("div")
     toast.className = `toast text-white px-4 py-3 rounded-lg shadow-2xl ${colors[type]} border border-white/20`
     toast.textContent = message
-
     container.appendChild(toast)
-
     setTimeout(() => {
         toast.remove();
     }, 3000);
