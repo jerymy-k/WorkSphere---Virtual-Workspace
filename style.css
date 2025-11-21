@@ -81,4 +81,7 @@
     }
 }
 @media (orientation: landscape) and (max-width: 1279px) {
+    .btn_ajt-title{
+        flex-direction: column;
+    }
 }

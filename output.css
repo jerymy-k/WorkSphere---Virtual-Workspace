@@ -194,9 +194,6 @@
   .relative {
     position: relative;
   }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
-  }
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
@@ -256,9 +253,6 @@
   }
   .inline-flex {
     display: inline-flex;
-  }
-  .table {
-    display: table;
   }
   .h-8 {
     height: calc(var(--spacing) * 8);
@@ -323,22 +317,12 @@
   .flex-1 {
     flex: 1;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .resize-none {
     resize: none;
@@ -493,9 +477,6 @@
   .bg-indigo-600 {
     background-color: var(--color-indigo-600);
   }
-  .bg-red-600 {
-    background-color: var(--color-red-600);
-  }
   .bg-red-600\/30 {
     background-color: color-mix(in srgb, oklch(57.7% 0.245 27.325) 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -600,16 +581,9 @@
   .text-zinc-800 {
     color: var(--color-zinc-800);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .hover\:bg-\[\#2c3444\] {
     &:hover {
@@ -770,6 +744,11 @@
     }
   }
 }
+@media (orientation: landscape) and (max-width: 1279px) {
+  .btn_ajt-title {
+    flex-direction: column;
+  }
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -864,11 +843,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -892,7 +866,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
     }
   }
 }
