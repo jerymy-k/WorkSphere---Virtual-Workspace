@@ -16,33 +16,27 @@
 </head>
 
 <body class="relative flex w-screen h-screen bg-black ">
-    <div id="toast-container" class="fixed top-5 right-5 flex flex-col gap-3 z-50"></div>
-    <script>
-        
-    </script>
-    <div id="details" class="absolute left-1/2 -translate-x-1/2 
-    text-white w-[40%] rounded-2xl bg-[#1a202c]  z-50 detailspage place-self-center h-[80vh] hidden">
-
-
-
+    <div id="toast-container" class="fixed top-5 right-5 flex flex-col gap-3 z-50">7
+        <!-- this container for the toast nottifications  -->
+    </div>
+    <div id="details"
+        class="absolute left-1/2 -translate-x-1/2 text-white w-[40%] rounded-2xl bg-[#1a202c]  z-50 detailspage place-self-center h-[80vh] hidden">
+        <!-- this container for the details of every worker -->
     </div>
     <div style="scrollbar-width: none;" id="ListAddWorkSpace"
         class="absolute left-1/2 -translate-x-1/2 place-self-center  text-white sm:w-[50%]  lg:w-[30%] hidden p-3 overflow-scroll rounded-2xl bg-[#1a202c] min-h-[40%]  flex-col z-50">
-
+        <!-- this container for the list of worker can get in for every room  -->
     </div>
     <aside class="SideBar w-[20%] flex flex-col h-100%">
         <div
             class="btn_ajt-title h-[20%] flex lg:flex-col flex-row-reverse items-center justify-around border-2 rounded-[20px] border-black m-[5px] bg-white">
-            <button class="ajoutBtn px-[5%] py-[4%] flex items-center   bg-green-500 text-white rounded-[20px]">
-                Ajouter
-            </button>
+            <button
+                class="ajoutBtn px-[5%] py-[4%] flex items-center   bg-green-500 text-white rounded-[20px]">Ajouter</button>
             <span class="text-[20px]">Liste Employers</span>
         </div>
         <div style="scrollbar-width: none;"
             class="employesContainer flex-1 m-[5px] rounded-[20px] p-[5px] bg-gray-200 flex flex-col gap-1 overflow-scroll h-full">
-
         </div>
-
     </aside>
     <main class=" m-[5px] rounded-[20px]">
         <div class="imgContainer relative z-0">
@@ -129,7 +123,6 @@
                             style="background-color: #2d3748; border-color: #4a5568; color: #e2e8f0; ">
                     </div>
                     <div>
-                        <!-- add rejex to email  -->
                         <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Email</label>
                         <input name="email" type="email" placeholder="exemple@domaine.com"
                             class="w-full rounded-md border-gray-200 shadow-sm focus:ring-2 focus:ring-indigo-200 p-2"
@@ -137,7 +130,6 @@
                     </div>
 
                     <div class="md:col-span-2">
-                        <!-- there i need to add a function for the picture -->
                         <label class="block text-sm font-medium mb-1" style="color: #e2e8f0;">Photo (URL)</label>
                         <input type="url" id="photoUrl" class="w-full border rounded p-2"
                             placeholder="https://example.com/photo.jpg" name="url"
