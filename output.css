@@ -280,9 +280,6 @@
   .h-\[30px\] {
     height: 30px;
   }
-  .h-\[70\%\] {
-    height: 70%;
-  }
   .h-\[80vh\] {
     height: 80vh;
   }
@@ -315,9 +312,6 @@
   }
   .w-\[40\%\] {
     width: 40%;
-  }
-  .w-\[300px\] {
-    width: 300px;
   }
   .w-full {
     width: 100%;
@@ -402,9 +396,6 @@
   }
   .place-self-end {
     place-self: end;
-  }
-  .self-center {
-    align-self: center;
   }
   .truncate {
     overflow: hidden;
