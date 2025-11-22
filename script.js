@@ -62,7 +62,7 @@ form.addEventListener("submit", function (e) {
     let email = form.email.value.trim();
     let url = form.url.value.trim();
 
-    const nomRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ ]{3,10}$/;
+    const nomRegex = /^[A-Za-z ]{3,10}$/;
     const telRegex = /^(\+212|0)(6|7)[0-9]{8}$/;
     const emailRegex = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
 
