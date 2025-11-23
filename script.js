@@ -142,7 +142,7 @@ function affichersidebar() {
                         <h5 class="font-extrabold text-zinc-500 truncate sm:hidden lg:flex" style="font-size : 12px;">${emp.nom}</h5>
                         <p class="roleEmploye font-bold text-zinc-500 truncate sm:hidden lg:flex" style="font-size : 12px;">${emp.role}</p>
                     </div>
-                <span>${emp.location}</span>
+                <span style="color : green ;">${emp.location}</span>
             `;
         employesContainer.appendChild(div);
     })
