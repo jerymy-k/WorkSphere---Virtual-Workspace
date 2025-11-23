@@ -67,15 +67,15 @@ form.addEventListener("submit", function (e) {
     const emailRegex = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
 
     if (!nomRegex.test(nom)) {
-        alert("Le nom est invalide (3 à 30 lettres uniquement).");
+        showToast("Le nom est invalide (3 à 30 lettres uniquement).", "warning");
         return;
     }
     if (!telRegex.test(telephone)) {
-        alert("Téléphone invalide. Exemple: +212612345678 ou 0612345678");
+        showToast("Téléphone invalide. Exemple: +212612345678 ou 0612345678" , "warning");
         return;
     }
     if (!emailRegex.test(email)) {
-        alert("Email invalide. Exemple: exemple@domaine.com");
+        showToast("Email invalide. Exemple: exemple@domaine.com" , "warning");
         return;
     }
     const experiences = document.querySelectorAll(".experiencedata");
@@ -87,7 +87,7 @@ form.addEventListener("submit", function (e) {
 
         if (startDate > endDate) {
             alert("La date début ne peut pas être après la date fin !");
-            throw "date error";
+            return 
         }
     });
     let experience = [];
@@ -289,7 +289,7 @@ function afficher(arrayroom, roomcontainer, room) {
     })
 }
 // -----------------this for toast Notification -------------
-function showToast(message, type = "info") {
+function showToast(message, type) {
     const container = document.getElementById("toast-container")
     const colors = {
         info: "bg-indigo-600",
@@ -303,5 +303,5 @@ function showToast(message, type = "info") {
     container.appendChild(toast)
     setTimeout(() => {
         toast.remove();
-    }, 3000);
+    }, 1500);
 }
