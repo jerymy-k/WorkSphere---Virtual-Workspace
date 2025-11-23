@@ -86,8 +86,8 @@ form.addEventListener("submit", function (e) {
         const endDate = new Date(fin);
 
         if (startDate > endDate) {
-            alert("La date début ne peut pas être après la date fin !");
-            return 
+            showToast("La date début ne peut pas être après la date fin !" , "warning");
+            throw errordate; 
         }
     });
     let experience = [];
@@ -261,7 +261,7 @@ function afficher(arrayroom, roomcontainer, room) {
                     employelist = employelist.filter(f => f.id != emp.id);
                     emplocation.location = room;
                     affichersidebar();
-                    showToast("vous avez ajouter l'employe avec succes", "info")
+                    
                 }
                 if (e.target.classList.contains('deletefromroom')) {
                     const employedlt = e.target.closest('.employe');
