@@ -173,7 +173,7 @@ function afficherdetails() {
             CloseDetails.addEventListener('click', () => {
                 details.classList.toggle('hidden');
             })
-            if (!e.target.classList.contains('deletefromroom')) {
+            if(!e.target.classList.contains('deletefromroom')){
                 details.classList.toggle('hidden');
             }
             eml.experience.forEach(exp => {
@@ -223,7 +223,7 @@ addtoroom.forEach(addbtn => {
             }
         }
         else {
-            showToast("Il n’y a aucun employé", "error")
+            showToast("Il n’y a aucun employé","error")
         }
     })
 })
@@ -261,7 +261,6 @@ function afficher(arrayroom, roomcontainer, room) {
                     employelist = employelist.filter(f => f.id != emp.id);
                     emplocation.location = room;
                     affichersidebar();
-                    
                 }
                 if (e.target.classList.contains('deletefromroom')) {
                     const employedlt = e.target.closest('.employe');
