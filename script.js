@@ -74,7 +74,7 @@ form.addEventListener("submit", function (e) {
         showToast("Téléphone invalide. Exemple: +212612345678 ou 0612345678" , "warning");
         return;
     }
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(email)) {      
         showToast("Email invalide. Exemple: exemple@domaine.com" , "warning");
         return;
     }
@@ -164,6 +164,7 @@ function afficherdetails() {
             <p>${eml.nom}</p>
             <p>${eml.email}</p>
             <p>${eml.telephone}</p>
+            <p>${eml.role}</p>
             <p class = "text-[20px] " style="color:green">${eml.location}</p>
             </div>
             `;
