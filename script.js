@@ -19,7 +19,8 @@ urle.addEventListener("input", () => {
     imagePreview.innerHTML = `
         <img src="${urle.value}">
     `
-})
+}) 
+
 // ---------for hide and affiche form -----------
 function hideAfficheForm() {
     formContainerAjout.classList.toggle("hidden");
@@ -80,8 +81,8 @@ form.addEventListener("submit", function (e) {
     }
     const experiences = document.querySelectorAll(".experiencedata");
     experiences.forEach(exp => {
-        const debut = exp.querySelector('input[name="debut"]')?.value;
-        const fin = exp.querySelector('input[name="fin"]')?.value;
+        const debut = exp.querySelector('input[name="debut"]').value;
+        const fin = exp.querySelector('input[name="fin"]').value;
         const startDate = new Date(debut);
         const endDate = new Date(fin);
 
@@ -91,7 +92,7 @@ form.addEventListener("submit", function (e) {
         }
     });
     let experience = [];
-    experiences.forEach((exp) => {
+    experiences.forEach(exp => {
         let poste = exp.querySelector('input[name="poste"]').value.trim();
         let entreprise = exp.querySelector('input[name="entreprise"]').value.trim();
         let debut = exp.querySelector("#debut").value;
@@ -131,7 +132,7 @@ function affichersidebar() {
         const div = document.createElement("div");
         div.setAttribute("data-id", `${emp.id}`);
         div.className =
-            "employe  flex rounded-2xl p-[5px] border-black  border-2 cursor-pointer gap-2 justify-between items-center w-";
+            "employe  flex rounded-2xl p-[5px] border-black  border-2 cursor-pointer gap-2 justify-between items-center ";
         div.innerHTML = `
             <div class="imageContainerProfil overflow-hidden flex justify-center items-center rounded-xl h-full w-9">
                     <img class="w-full h-full"
